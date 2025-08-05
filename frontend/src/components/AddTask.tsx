@@ -98,18 +98,18 @@ export default function AddTask({ userId }: {userId: number}) {
             helperText={isInvalidName && 'タスク名を入力してください'}
           />
           <TextField
-            autoFocus
+            type="date"
+            InputLabelProps={{ shrink: true }}
             margin="normal"
             id="due-date"
             label="Due Date"
-            placeholder='yyyy-mm-dd'
             fullWidth
             required
             value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
+            onChange={e => setDueDate(e.target.value)}
             error={isInvalidDueDate}
-            helperText={isInvalidDueDate && '日付形式で入力してください'}
-          />
+            helperText={isInvalidDueDate && '日付形式(yyyy-mm-dd)で入力してください'}
+/>
           <TextField
             autoFocus
             margin="normal"
